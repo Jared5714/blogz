@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
-import re
 
 app = Flask(__name__)
 app.secret_key = 'as12de4322dgt5eft5'

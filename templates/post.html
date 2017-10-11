@@ -3,6 +3,11 @@
 {% block content %}
     <h1>Add New Entry</h1>
     <div>
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <p class = "error">{{ message }}</p>
+    {% endfor %}
+    {% endwith %}
     <form action = '/newpost' method='post'>
         <label>
             Title for new Blog:
@@ -15,13 +20,6 @@
         rows="10" cols="50">{{body}}</textarea>
         <label></label>
         <input type="submit" value='New Entry' />
-        {% with messages = get_flashed_messages() %}
-          <ul>
-          {% for message in messages %}
-            <p>{{ message }}</p>
-          {% endfor %}
-          </ul>
-        {% endwith %}
     </form>
     </div>
 {% endblock %}

@@ -43,7 +43,7 @@ def newpost():
         db.session.add(new_entry)
         db.session.commit()
         blog = Blog.query.order_by('-id').first()
-        return render_template('newblogentry.html', blog = blog)
+        return render_template('entry.html', blog = blog)
 
 @app.route('/entry')
 def entry():

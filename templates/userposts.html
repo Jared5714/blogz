@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if blogs|length == 0 %}
+<p>No Blog Entries</p>
+{% else %}
+
+    {% for blog in blogs %}
+    <a href = '/entry?id={{blog.owner_id}}'><h3>{{blog.title}}</h3></a>
+    <p>{{blog.body}}</p>
+    Written by: <p><a href = '/userposts?user={{blog.owner.username}}'>{{blog.owner.username}}</a></p>
+    {% endfor %}
+{% endif %}
+{% endblock %}

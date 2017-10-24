@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<a href = '/entry?id={{blog.id}}&user={{blog.owner.username}}'><h3>{{blog.title}}</h3></a>
+<a href = '/entry?id={{blog.id}}'><h3>{{blog.title}}</h3></a>
 <p>{{blog.body}}</p>
 Written by: <p><a href = '/userposts?user={{blog.owner.username}}'>{{blog.owner.username}}</a></p>
 {% endblock %}
